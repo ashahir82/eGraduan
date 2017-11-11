@@ -48,3 +48,9 @@ footer .footer-bar {
 	border-bottom:#403E44 1px dashed;
 }
 /** End Footer **/
+
+/** 3. Content **/
+.content {
+	margin-bottom: 20px;
+}
+/** End Content **/
