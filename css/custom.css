@@ -1,0 +1,10 @@
+.v4-tease {
+    display: block;
+    padding: 15px 20px;
+	margin: 0;
+    /* font-weight: 700; */
+	font-size: 14px;
+    color: #fff;
+    text-align: center;
+    background-color: #0275d8;
+}
