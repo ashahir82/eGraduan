@@ -1,3 +1,4 @@
+/** 1. NavBar **/
 .v4-tease {
     display: block;
     padding: 15px 20px;
@@ -8,3 +9,42 @@
     text-align: center;
     background-color: #0275d8;
 }
+/** End NavBar **/
+
+/** 2. Footer **/
+#footer p { font-size: 11px; }
+#footer .col-left p, #footer .col-right p, #footer h4, footer .footer-bar { text-align: center; }
+@media (min-width: 768px) {
+	#footer .col-left p { text-align: justify; }	
+	#footer .col-left h4 { text-align: left; }	
+	#footer .col-right p { text-align: right; }
+	#footer .col-right h4 { text-align: right; }
+	.dl-horizontal dt { width: 100px; }
+	.dl-horizontal dd { margin-left: 120px; }
+	.events-title { font-size: 24px !important; }
+}
+
+footer  {
+	color:#87919F;
+	font-size:13px;
+	overflow:hidden;
+	background:#2E363F;
+	padding: 0 !important;
+	display:block;
+}
+
+footer .footer-content h4 {
+	color:#fff !important;
+	font-weight:200;
+	font-size:16px;
+}
+
+footer .footer-bar {
+	background:#292f38;
+	display:block;
+	text-transform:uppercase;
+	position:relative;
+	padding:20px 0;
+	border-bottom:#403E44 1px dashed;
+}
+/** End Footer **/
