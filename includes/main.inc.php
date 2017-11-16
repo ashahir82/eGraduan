@@ -38,7 +38,7 @@
 				</form>
 			</div>
 			<div class="panel-footer">
-				<p class="text-justify">Maklumat ini tepat untuk pelajar keluaran dari sesi <strong>2/2011</strong> dan seterusnya. Untuk maklumat lanjut sila hubungi <strong>Bahagian Kawalan Kualiti Latihan ILPKL</strong>.</p>
+				<p class="text-justify">Maklumat ini tepat untuk pelajar keluaran dari sesi <strong>2/2010</strong> dan seterusnya. Untuk maklumat lanjut sila hubungi <strong>Bahagian Kawalan Kualiti Latihan ILPKL</strong>.</p>
 			</div>
 		</div>
 		
