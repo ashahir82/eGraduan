@@ -52,7 +52,7 @@
 
 			<!-- Table -->
 			<div class="table-responsive">
-				<table class="table table-hover table-condensed">
+				<table class="table table-hover table-condensed" id="displayresult">
 					<thead>
 						<tr class="info">
 							<th>#</th>

@@ -102,4 +102,8 @@ footer .footer-bar {
 	background-color: #fcf8e3;
 	color: #aa6708;
 }
+
+#displayresult {
+	font-size: 12px;
+}
 /** End Search **/
