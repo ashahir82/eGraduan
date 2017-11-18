@@ -57,10 +57,11 @@
 						<tr class="info">
 							<th>#</th>
 							<th>Nama</th>
-							<th>Sesi Kemasukan</th>
+							<th>Persijilan</th>
 							<th>Program</th>
 							<th>Sesi Keluaran</th>
 							<th>Konvokesyen</th>
+							<th>Tindakan</th>
 						</tr>
 					</thead>
 					<tbody id="searchContent">

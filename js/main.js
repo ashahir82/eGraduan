@@ -33,7 +33,7 @@ $(function(){
 					var i, trHTML = '';
 					if (result.success.data.length != 0) {
 						for (i = 0; i < result.success.data.length && i < 20; i++) {
-							trHTML += '<tr><td>' + (i+1) + '</td><td>' + result.success.data[i].name + '</td><td>' + result.success.data[i].intake + '</td><td>' + result.success.data[i].course + '</td><td>' + result.success.data[i].output + '</td><td>' + result.success.data[i].convo + '</td></tr>';
+							trHTML += '<tr><td>' + (i+1) + '</td><td>' + result.success.data[i].name + '</td><td>' + result.success.data[i].type + '</td><td>' + result.success.data[i].course + '</td><td>' + result.success.data[i].output + '</td><td>' + result.success.data[i].convo + '</td><td><div class="btn-group btn-group-xs" role="group" aria-label="..."><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button></div></td></tr>';
 						}
 					} else {
 						trHTML += '<tr><td colspan="6">Tiada rekod ditemui.</td></tr>';
