@@ -47,7 +47,7 @@
 				<h2 class="panel-title">KEPUTUSAN SEMAKAN</h2>
 			</div>
 			<div class="panel-body">
-				<p>...</p>
+				<p id="search-result">...</p>
 			</div>
 
 			<!-- Table -->

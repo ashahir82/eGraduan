@@ -31,9 +31,10 @@ if(isset($_GET['action']) && empty($_GET['action']) === false && $_GET['action']
 	}
 	
 	if (empty($errors)) {
-		$result = mysqli_query($con,"SELECT * FROM `student` AS S INNER JOIN `cert` AS C ON `S`.`stud_id`=`C`.`stud_id` INNER JOIN `course` AS CS ON `C`.`course_id`=`CS`.`course_id` INNER JOIN `type` AS T ON `C`.`type_id`=`T`.`type_id` WHERE `S`.`stud_id` LIKE '%".$nokp."%' AND `S`.`stud_fullname` LIKE '%".$name."%' AND `C`.`ndp` LIKE '%".$ndp."%' ORDER BY `C`.`cert_id` LIMIT 20");
+		$result = mysqli_query($con,"SELECT * FROM `student` AS S INNER JOIN `cert` AS C ON `S`.`stud_id`=`C`.`stud_id` INNER JOIN `course` AS CS ON `C`.`course_id`=`CS`.`course_id` INNER JOIN `type` AS T ON `C`.`type_id`=`T`.`type_id` WHERE `S`.`stud_id` LIKE '%".$nokp."%' AND `S`.`stud_fullname` LIKE '%".$name."%' AND `C`.`ndp` LIKE '%".$ndp."%' ORDER BY `C`.`cert_id`");
 		if (mysqli_num_rows($result) != 0) {
-			// output data of each row		
+			// output data of each row
+			$total = mysqli_num_rows($result);
 			while (($row = mysqli_fetch_assoc($result)) != false) {
 				$rowsResult[] = array(
 					'name' => $row['stud_fullname'],
@@ -54,6 +55,7 @@ if(isset($_GET['action']) && empty($_GET['action']) === false && $_GET['action']
 	} else {
 		$rows['success'] = array(
 			'status' => 'ok',
+			'record' => $total,
 			'data' => $rowsResult
 		);
 	}

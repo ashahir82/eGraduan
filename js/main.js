@@ -32,7 +32,7 @@ $(function(){
 				} else if (result.success) {//if the result success
 					var i, trHTML = '';
 					if (result.success.data.length != 0) {
-						for (i = 0; i < result.success.data.length; i++) {
+						for (i = 0; i < result.success.data.length && i < 20; i++) {
 							trHTML += '<tr><td>' + (i+1) + '</td><td>' + result.success.data[i].name + '</td><td>' + result.success.data[i].intake + '</td><td>' + result.success.data[i].course + '</td><td>' + result.success.data[i].output + '</td><td>' + result.success.data[i].convo + '</td></tr>';
 						}
 					} else {
@@ -40,6 +40,13 @@ $(function(){
 					}
 					$('#searchContent').html(''); // blank before load.
 					$('#searchContent').html(trHTML); // load here 
+					
+					var trHTML = '';
+					trHTML = 'Carian anda terdapat ' + result.success.record + ' rekod.';
+					if(result.success.record > 20) {
+						trHTML += ' Keputusan memaparkan 20 rekod teratas sahaja.';
+					}
+					$('#search-result').html(trHTML); // load here 
 					$(".panel-result").show();
 				}
 			},//success
