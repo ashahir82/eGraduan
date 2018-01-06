@@ -37,6 +37,7 @@ if(isset($_GET['action']) && empty($_GET['action']) === false && $_GET['action']
 			$total = mysqli_num_rows($result);
 			while (($row = mysqli_fetch_assoc($result)) != false) {
 				$rowsResult[] = array(
+					'id' => $row['cert_id'],
 					'name' => $row['stud_fullname'],
 					'intake' => $row['intake'],
 					'type' => $row['name_bm'],
@@ -61,5 +62,42 @@ if(isset($_GET['action']) && empty($_GET['action']) === false && $_GET['action']
 	}
 	
 	echo json_encode($rows);
+}
+
+if(isset($_GET['action']) && empty($_GET['action']) === false && $_GET['action'] == "getDetail" && isset($_GET['id'])) {
+	$id = sanitize($_GET['id']);
+	$result = mysqli_query($con,"SELECT * FROM `student` AS S INNER JOIN `cert` AS C ON `S`.`stud_id`=`C`.`stud_id` INNER JOIN `course` AS CS ON `C`.`course_id`=`CS`.`course_id` INNER JOIN `type` AS T ON `C`.`type_id`=`T`.`type_id` WHERE `C`.`cert_id` = " . $id);
+	if (mysqli_num_rows($result) != 0) {
+		// output data of each row
+		while ($row = mysqli_fetch_assoc($result)) {
+			echo '<p>Berikut adalah maklumat lengkap bagi graduan '.$row['stud_fullname'].'.</p>
+			<table class="table table-bordered table-condensed">
+				<tr>
+					<th>Nama Penuh</th>
+					<td>'.$row['stud_fullname'].'</td>
+				</tr>
+				<tr>
+					<th>Jenis Kelayakan</th>
+					<td>' . $row['name_bm'] . '</td>
+				</tr>
+				<tr>
+					<th>Nama Program</th>
+					<td>' . $row['course_name_bm'] . '</td>
+				</tr>
+				<tr>
+					<th>Sesi Kemasukan</th>
+					<td>' . $row['intake'] . '</td>
+				</tr>
+				<tr>
+					<th>Sesi Keluaran</th>
+					<td>' . $row['output'] . '</td>
+				</tr>
+				<tr>
+					<th>Konvokesyen</th>
+					<td>' . $row['convo'] . '</td>
+				</tr>
+			</table>';
+		}
+	}
 }
 ?>

@@ -33,10 +33,10 @@ $(function(){
 					var i, trHTML = '';
 					if (result.success.data.length != 0) {
 						for (i = 0; i < result.success.data.length && i < 20; i++) {
-							trHTML += '<tr><td>' + (i+1) + '</td><td>' + result.success.data[i].name + '</td><td>' + result.success.data[i].type + '</td><td>' + result.success.data[i].course + '</td><td>' + result.success.data[i].output + '</td><td>' + result.success.data[i].convo + '</td><td><div class="btn-group btn-group-xs" role="group" aria-label="..."><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button></div></td></tr>';
+							trHTML += '<tr><td>' + (i+1) + '</td><td>' + result.success.data[i].name + '</td><td>' + result.success.data[i].type + '</td><td>' + result.success.data[i].course + '</td><td>' + result.success.data[i].convo + '</td><td><div class="btn-group btn-group-xs" role="group" aria-label="..."><button type="button" class="btn btn-success" data-toggle="modal" data-target="#graduanDetail" data-id="' + result.success.data[i].id + '" id="getDetail"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button></div></td></tr>';
 						}
 					} else {
-						trHTML += '<tr><td colspan="6">Tiada rekod ditemui.</td></tr>';
+						trHTML += '<tr><td colspan="5">Tiada rekod ditemui.</td></tr>';
 					}
 					$('#searchContent').html(''); // blank before load.
 					$('#searchContent').html(trHTML); // load here 
@@ -65,6 +65,28 @@ $(function(){
 			}//error
 		});//ajax
 	});
+	
+	//View Detail
+	$(document).on('click', '#getDetail', function(e){
+		e.preventDefault();
+		var uid = $(this).data('id'); // get id of clicked row
+		var urlcarian="ajax/doCert.php?action=getDetail&id=" + uid;
+		$('#dynamic-content').html(''); // leave this div blank
+		$.ajax({
+			url:urlcarian,//the URL
+			type:'get',//method used
+			async:'true',
+			dataType:"html",
+			beforeSend: function(){ $("#dynamic-content").html('Proces carian...'); },
+		})
+		.done(function(data){
+			$('#dynamic-content').html(''); // blank before load.
+			$('#dynamic-content').html(data); // load here 
+		})
+		.fail(function(){
+			$('#dynamic-content').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
+		});
+    });
 })
 
 function InitOverviewDataTable()

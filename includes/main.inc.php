@@ -59,7 +59,6 @@
 							<th>Nama</th>
 							<th>Persijilan</th>
 							<th>Program</th>
-							<th>Sesi Keluaran</th>
 							<th>Konvokesyen</th>
 							<th>Tindakan</th>
 						</tr>
@@ -69,5 +68,22 @@
 				</table>
 			</div>
 		</div>
+		<div class="modal fade" tabindex="-1" role="dialog" id="graduanDetail">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header bg-primary">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h3 class="modal-title text-center">Maklumat Graduan</h3>
+					</div>
+					<div class="modal-body">
+						<div id="dynamic-content"></div>
+					</div>
+					<div class="modal-footer bg-primary">
+						<button type="button" class="btn btn-success" id="printDetail"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Cetak</button>
+						<button type="button" class="btn btn-warning" data-dismiss="modal" id="cancelButton"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Tutup</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 	</div>
 </div>

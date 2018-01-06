@@ -103,7 +103,7 @@ footer .footer-bar {
 	color: #aa6708;
 }
 
-#displayresult {
+#displayresult, #dynamic-content table {
 	font-size: 12px;
 }
 /** End Search **/
